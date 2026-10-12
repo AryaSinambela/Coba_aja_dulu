@@ -37,7 +37,7 @@ class BukuSeeder extends Seeder
             ['MNJ', 'A Guide to the Project Management Body of Knowledge (PMBOK Guide)', 'Project Management Institute', 'PMI', 2021, 'Standar dan panduan manajemen proyek: prinsip, domain kinerja, dan praktik terbaik.'],
             ['MNJ', 'Principles of Marketing', 'Philip Kotler, Gary Armstrong', 'Pearson', 2020, 'Dasar-dasar pemasaran: segmentasi, penentuan target, bauran pemasaran, dan perilaku konsumen.'],
 
-            ['KODE_ASLI', 'Pedoman Umum Ejaan Bahasa Indonesia (PUEBI)', 'Badan Pengembangan dan Pembinaan Bahasa', 'Kementerian Pendidikan dan Kebudayaan', 2016, 'Pedoman penulisan bahasa Indonesia: ejaan, tanda baca, dan penulisan unsur serapan.'],
+            ['UMM', 'Pedoman Umum Ejaan Bahasa Indonesia (PUEBI)', 'Badan Pengembangan dan Pembinaan Bahasa', 'Kementerian Pendidikan dan Kebudayaan', 2016, 'Pedoman penulisan bahasa Indonesia: ejaan, tanda baca, dan penulisan unsur serapan.'],
         ];
 
         foreach ($data as [$kode, $judul, $penulis, $penerbit, $tahun, $sinopsis]) {
