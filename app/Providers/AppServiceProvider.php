@@ -13,12 +13,12 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        Paginator::useBootstrapFive();
+          Paginator::useBootstrapFive();
 
-                DB::listen(function ($query) {
-            if (str_contains($query->sql, 'bukus') || str_contains($query->sql, 'kategoris')) {
-                Log::info(sprintf('[SQL AUDIT] (%.2f ms) %s', $query->time, $query->sql));
-            }
-        });
+    DB::listen(function ($query) {
+        if (str_contains($query->sql, 'bukus') || str_contains($query->sql, 'kategoris')) {
+            Log::info(sprintf('[SQL AUDIT] (%.2f ms) %s', $query->time, $query->sql));
+        }
+    });
     }
 }
