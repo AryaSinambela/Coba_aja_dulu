@@ -79,7 +79,7 @@ Route `kategori.*` mengikuti pola yang sama. Daftar lengkap: `php artisan route:
 
 | Kolom | Aturan |
 |---|---|
-| `isbn` | wajib, 13 digit, **unik** |
+| `isbn` | wajib, 10-13 digit angka, **unik** |
 | `judul` | wajib, **minimal 5** karakter, maksimal 200 |
 | `penulis`, `penerbit` | wajib, maksimal 150 |
 | `tahun_terbit` | wajib, angka antara 1900 dan tahun berjalan |
