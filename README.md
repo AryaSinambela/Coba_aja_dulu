@@ -137,9 +137,9 @@ mysql -u root sipus_del < database/sipus_del.sql
 
 Halaman index menjalankan **3 query tetap**, berapa pun jumlah bukunya:
 
-1. `select count(*) ... from bukus` untuk pagination
-2. `select * from bukus ... limit 10` untuk data halaman
-3. `select * from kategoris where id in (...)` untuk eager loading
+1. [2026-10-12 01:38:42] local.INFO: [SQL AUDIT] (1.38 ms) select count(*) as `aggregate` from `bukus`
+2. [2026-10-12 01:38:42] local.INFO: [SQL AUDIT] (1.39 ms) select * from `bukus` order by `created_at` desc limit 10 offset 0
+3. [2026-10-12 01:38:42] local.INFO: [SQL AUDIT] (1.57 ms) select * from `kategoris` where `kategoris`.`id` in (1, 2)
 
 Tanpa eager loading, setiap baris memicu 1 query tambahan ke `kategoris` (N+1 problem), sehingga 10 buku menghasilkan 12 query. Catatan: modul menyebut "2 query", tetapi `paginate()` menambah 1 query `count`, dan inti pembuktiannya tetap sama (tidak ada query per baris).
 
