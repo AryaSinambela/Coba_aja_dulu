@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
 
+        
         :root {
             --del-purple: #4C1D95;
             --del-purple-dark: #3B0764;
@@ -236,18 +237,40 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="nav">
-                <ul class="navbar-nav ms-auto gap-1">
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('buku.*') ? 'active' : '' }}" href="{{ route('buku.index') }}">
-                            <i class="bi bi-journal-bookmark me-1"></i>Buku
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('kategori.*') ? 'active' : '' }}" href="{{ route('kategori.index') }}">
-                            <i class="bi bi-tags me-1"></i>Kategori
-                        </a>
-                    </li>
-                </ul>
+                <ul class="navbar-nav ms-auto gap-1 align-items-lg-center">
+    <li class="nav-item">
+        <a class="nav-link {{ request()->routeIs('buku.*') ? 'active' : '' }}" href="{{ route('buku.index') }}">
+            <i class="bi bi-journal-bookmark me-1"></i>Buku
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link {{ request()->routeIs('kategori.*') ? 'active' : '' }}" href="{{ route('kategori.index') }}">
+            <i class="bi bi-tags me-1"></i>Kategori
+        </a>
+    </li>
+    @auth
+        <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('peminjaman.*') ? 'active' : '' }}" href="{{ route('peminjaman.index') }}">
+                <i class="bi bi-arrow-left-right me-1"></i>Peminjaman
+            </a>
+        </li>
+        <li class="nav-item d-flex align-items-center gap-2 ms-lg-2">
+            <span class="small text-white-50 text-nowrap">
+                {{ auth()->user()->name }} · sesi sejak {{ session('login_timestamp') }}
+            </span>
+            <form action="{{ route('logout') }}" method="POST" class="m-0">
+                @csrf
+                <button class="btn btn-sm btn-light fw-semibold"><i class="bi bi-box-arrow-right me-1"></i>Logout</button>
+            </form>
+        </li>
+    @else
+        <li class="nav-item ms-lg-2">
+            <a class="btn btn-sm btn-light fw-semibold" href="{{ route('login') }}">
+                <i class="bi bi-person-badge me-1"></i>Login Pustakawan
+            </a>
+        </li>
+    @endauth
+</ul>
             </div>
         </div>
     </nav>

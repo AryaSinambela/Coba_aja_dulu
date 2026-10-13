@@ -1,22 +1,53 @@
 <x-layout title="Peminjaman" :wide="true">
-    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
-        <div>
-            <h1 class="h3 hero-title mb-1"><i class="bi bi-arrow-left-right me-2 text-del"></i>Sirkulasi Peminjaman</h1>
-            <p class="text-muted mb-0">Riwayat peminjaman dan pengembalian buku.</p>
-        </div>
-        <form method="GET" action="{{ route('peminjaman.index') }}" class="d-flex gap-2 flex-wrap">
-            <div class="search-box">
-                <i class="bi bi-search"></i>
-                <input type="search" name="search" value="{{ request('search') }}" class="form-control" placeholder="Cari kode, NIM, nama...">
+    @php
+    $kartu = [
+        ['label' => 'Total Judul Buku',    'nilai' => $stats['total_judul'],     'ikon' => 'bi-journal-bookmark-fill'],
+        ['label' => 'Total Stok Tersedia', 'nilai' => $stats['total_stok'],      'ikon' => 'bi-stack'],
+        ['label' => 'Sedang Dipinjam',     'nilai' => $stats['sedang_dipinjam'], 'ikon' => 'bi-arrow-up-right-circle-fill'],
+        ['label' => 'Sudah Dikembalikan',  'nilai' => $stats['sudah_kembali'],   'ikon' => 'bi-arrow-return-left'],
+    ];
+
+@endphp
+<div class="row g-3 mb-4">
+    @foreach($kartu as $k)
+        <div class="col-6 col-lg-3">
+            <div class="stat-card" style="--d: {{ $loop->index * 70 }}ms">
+                <i class="bi {{ $k['ikon'] }}"></i>
+                <div>
+                    <div class="stat-num">{{ number_format($k['nilai']) }}</div>
+                    <div class="stat-label">{{ $k['label'] }}</div>
+                </div>
             </div>
-            <select name="status" class="form-select w-auto" onchange="this.form.submit()">
-                <option value="">Semua status</option>
-                <option value="dipinjam" @selected(request('status') === 'dipinjam')>Dipinjam</option>
-                <option value="dikembalikan" @selected(request('status') === 'dikembalikan')>Dikembalikan</option>
-            </select>
-            <button class="btn btn-del">Cari</button>
-        </form>
+        </div>
+    @endforeach
+</div>
+
+@if(session('last_search') && ! request()->filled('search'))
+    <div class="small text-muted mb-3">
+        Pencarian terakhir Anda:
+        <a href="{{ route('buku.index', ['search' => session('last_search')]) }}">{{ session('last_search') }}</a>
     </div>
+@endif
+
+    <div class="d-flex gap-2 align-items-center flex-wrap">
+    <form method="GET" action="{{ route('buku.index') }}" class="d-flex gap-2 align-items-center flex-wrap">
+        <div class="search-box">
+            <i class="bi bi-search"></i>
+            <input type="search" name="search" value="{{ request('search') }}" class="form-control" placeholder="Cari judul, penulis, ISBN...">
+        </div>
+        <select name="kategori" class="form-select w-auto" onchange="this.form.submit()">
+            <option value="">Semua kategori</option>
+            @foreach($kategoris as $kat)
+                <option value="{{ $kat->id }}" @selected(request('kategori') == $kat->id)>{{ $kat->nama_kategori }}</option>
+            @endforeach
+        </select>
+        <button class="btn btn-outline-del"><i class="bi bi-funnel me-1"></i>Cari</button>
+        @if(request()->hasAny(['search', 'kategori']))
+            <a href="{{ route('buku.index') }}" class="btn btn-outline-del">Reset</a>
+        @endif
+    </form>
+    <a href="{{ route('buku.create') }}" class="btn btn-del"><i class="bi bi-plus-lg me-1"></i>Tambah Buku</a>
+</div>
 
     <div class="card card-modern overflow-hidden">
         <div class="table-responsive">
@@ -34,7 +65,7 @@
                             <td class="fw-semibold">{{ $p->buku->judul }}</td>
                             <td>
                                 <div>{{ $p->nama_peminjam }}</div>
-                                <div class="small text-muted">{{ $p->nim_peminjam }}</div>
+                                <div class="small text-muted">Dipinjam {{ $buku->peminjamans_count }}× sepanjang riwayat</div>
                             </td>
                             <td>{{ $p->tanggal_pinjam->format('d M Y') }}</td>
                             <td>{{ $p->tanggal_jatuh_tempo->format('d M Y') }}</td>
