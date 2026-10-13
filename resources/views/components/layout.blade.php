@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
+
         :root {
             --del-purple: #4C1D95;
             --del-purple-dark: #3B0764;
@@ -208,7 +209,22 @@
         }
         body.wide .search-box input { min-width: 320px; padding-top: .7rem; padding-bottom: .7rem; }
         body.wide .btn-del { padding: .7rem 1.3rem; }
-    </style>
+
+                .stat-card {
+            display: flex; align-items: center; gap: 1rem; padding: 1rem 1.2rem;
+            background: linear-gradient(135deg, #F8F5FF, #fff); border: 1px solid #E8DEFF; border-radius: 1rem;
+            animation: rowIn .45s ease both; animation-delay: var(--d, 0ms);
+            transition: transform .2s, box-shadow .2s;
+        }
+        .stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(76,29,149,.15); }
+        .stat-card > i {
+            font-size: 1.5rem; color: #4C1D95; background: #EDE4FF;
+            width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; border-radius: .8rem;
+        }
+        .stat-num { font-size: 1.5rem; font-weight: 700; line-height: 1.1; }
+        .stat-label { font-size: .8rem; color: #6b6485; }
+
+        </style>
 </head>
 <body class="{{ ($wide ?? false) ? 'wide' : '' }}">
     <nav class="navbar navbar-expand-lg navbar-dark navbar-del mb-4 sticky-top">
