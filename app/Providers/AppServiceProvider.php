@@ -9,6 +9,7 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+    
     public function register(): void {}
 
     public function boot(): void
@@ -16,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
           Paginator::useBootstrapFive();
 
     DB::listen(function ($query) {
-        if (str_contains($query->sql, 'bukus') || str_contains($query->sql, 'kategoris')) {
+        if (str_contains($query->sql, 'bukus') || str_contains($query->sql, 'kategoris') || str_contains($query->sql, 'peminjamans')) {
             Log::info(sprintf('[SQL AUDIT] (%.2f ms) %s', $query->time, $query->sql));
         }
     });
