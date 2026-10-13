@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
           Paginator::useBootstrapFive();
 
     DB::listen(function ($query) {
-        if (str_contains($query->sql, 'bukus') || str_contains($query->sql, 'kategoris') || str_contains($query->sql, 'peminjamans')) {
+            if (str_contains($query->sql, 'bukus') || str_contains($query->sql, 'kategoris') || str_contains($query->sql, 'peminjamans')) {
             Log::info(sprintf('[SQL AUDIT] (%.2f ms) %s', $query->time, $query->sql));
         }
     });
