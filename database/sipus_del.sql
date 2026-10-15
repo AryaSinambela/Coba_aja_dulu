@@ -48,7 +48,7 @@ CREATE TABLE `bukus` (
 
 LOCK TABLES `bukus` WRITE;
 /*!40000 ALTER TABLE `bukus` DISABLE KEYS */;
-INSERT INTO `bukus` VALUES (1,'9795828669744','Clean Code','Robert C. Martin','Prentice Hall',2008,1,4,'Panduan menulis kode yang bersih, mudah dibaca, dan mudah dirawat, lengkap dengan contoh refactoring.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(2,'9781048616521','Introduction to Algorithms','Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein','MIT Press',2022,1,10,'Referensi lengkap algoritma dan struktur data beserta analisis kompleksitasnya.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(3,'9792884303872','The Pragmatic Programmer','David Thomas, Andrew Hunt','Addison-Wesley',2019,1,3,'Kumpulan praktik dan cara berpikir pengembang perangkat lunak profesional.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(4,'9793046797447','Operating System Concepts','Abraham Silberschatz, Peter B. Galvin, Greg Gagne','Wiley',2018,1,15,'Pembahasan konsep sistem operasi: proses, memori, penyimpanan, dan keamanan.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(5,'9782039532141','Computer Networking: A Top-Down Approach','James F. Kurose, Keith W. Ross','Pearson',2021,1,14,'Pengantar jaringan komputer dengan pendekatan top-down mulai dari lapisan aplikasi.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(6,'9796113949671','Cryptography and Network Security','William Stallings','Pearson',2017,1,1,'Prinsip dan praktik kriptografi serta keamanan jaringan, termasuk teori bilangan dan finite field.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(7,'9793493269412','Artificial Intelligence: A Modern Approach','Stuart Russell, Peter Norvig','Pearson',2020,1,6,'Buku acuan kecerdasan buatan: pencarian, constraint satisfaction, logika, dan pembelajaran mesin.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(8,'9791868610876','Laravel: Up & Running','Matt Stauffer','O\'Reilly Media',2019,1,6,'Panduan membangun aplikasi web dengan Laravel: routing, Eloquent, Blade, dan validasi.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(9,'9789159192316','Software Engineering','Ian Sommerville','Pearson',2015,1,5,'Dasar rekayasa perangkat lunak: proses pengembangan, kebutuhan, desain, dan pengujian.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(10,'9785552132782','Database System Concepts','Abraham Silberschatz, Henry F. Korth, S. Sudarshan','McGraw-Hill',2019,2,11,'Konsep basis data relasional, SQL, desain skema, transaksi, dan optimasi kueri.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(11,'9784090711671','Fundamentals of Database Systems','Ramez Elmasri, Shamkant B. Navathe','Pearson',2016,2,11,'Landasan sistem basis data: model ER, normalisasi, SQL, dan arsitektur DBMS.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(12,'9798446113934','Systems Analysis and Design','Kenneth E. Kendall, Julie E. Kendall','Pearson',2019,2,1,'Metode analisis dan perancangan sistem informasi, dari kebutuhan pengguna hingga implementasi.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(13,'9790179692625','Management Information Systems','Kenneth C. Laudon, Jane P. Laudon','Pearson',2020,2,13,'Peran sistem informasi dalam organisasi modern dan pengambilan keputusan bisnis.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(14,'9790732710551','Don\'t Make Me Think, Revisited','Steve Krug','New Riders',2014,2,8,'Prinsip usability dan desain web yang intuitif, dibahas ringkas dan praktis.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(15,'9789957947309','Introduction to Linear Algebra','Gilbert Strang','Wellesley-Cambridge Press',2016,3,7,'Pengantar aljabar linier: vektor, matriks, ruang vektor, eigenvalue, dan aplikasinya.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(16,'9784983906993','Probability & Statistics for Engineers & Scientists','Ronald E. Walpole, Raymond H. Myers, Sharon L. Myers, Keying Ye','Pearson',2012,3,8,'Probabilitas dan statistika untuk mahasiswa teknik dan sains, dengan banyak contoh soal.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(17,'9792474044567','Discrete Mathematics and Its Applications','Kenneth H. Rosen','McGraw-Hill',2018,3,5,'Matematika diskrit: logika, himpunan, graf, kombinatorika, dan teori bilangan.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(18,'9796196634785','A Guide to the Project Management Body of Knowledge (PMBOK Guide)','Project Management Institute','PMI',2021,4,15,'Standar dan panduan manajemen proyek: prinsip, domain kinerja, dan praktik terbaik.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(19,'9788469991923','Principles of Marketing','Philip Kotler, Gary Armstrong','Pearson',2020,4,4,'Dasar-dasar pemasaran: segmentasi, penentuan target, bauran pemasaran, dan perilaku konsumen.','2026-10-11 18:45:11','2026-10-11 18:45:11'),(20,'9793338207036','Pedoman Umum Ejaan Bahasa Indonesia (PUEBI)','Badan Pengembangan dan Pembinaan Bahasa','Kementerian Pendidikan dan Kebudayaan',2016,5,3,'Pedoman penulisan bahasa Indonesia: ejaan, tanda baca, dan penulisan unsur serapan.','2026-10-11 18:45:11','2026-10-11 18:45:11');
+INSERT INTO `bukus` VALUES (1,'9792421939878','Clean Code','Robert C. Martin','Prentice Hall',2008,1,1,'Panduan menulis kode yang bersih, mudah dibaca, dan mudah dirawat, lengkap dengan contoh refactoring.','2026-10-15 04:41:11','2026-10-15 04:41:12'),(2,'9793298923311','Introduction to Algorithms','Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein','MIT Press',2022,1,0,'Referensi lengkap algoritma dan struktur data beserta analisis kompleksitasnya.','2026-10-15 04:41:11','2026-10-15 04:41:11'),(3,'9797012601127','The Pragmatic Programmer','David Thomas, Andrew Hunt','Addison-Wesley',2019,1,2,'Kumpulan praktik dan cara berpikir pengembang perangkat lunak profesional.','2026-10-15 04:41:11','2026-10-15 04:41:12'),(4,'9799447039513','Operating System Concepts','Abraham Silberschatz, Peter B. Galvin, Greg Gagne','Wiley',2018,1,14,'Pembahasan konsep sistem operasi: proses, memori, penyimpanan, dan keamanan.','2026-10-15 04:41:11','2026-10-15 04:41:11'),(5,'9793220096120','Computer Networking: A Top-Down Approach','James F. Kurose, Keith W. Ross','Pearson',2021,1,2,'Pengantar jaringan komputer dengan pendekatan top-down mulai dari lapisan aplikasi.','2026-10-15 04:41:11','2026-10-15 04:41:11'),(6,'9788042961152','Cryptography and Network Security','William Stallings','Pearson',2017,1,1,'Prinsip dan praktik kriptografi serta keamanan jaringan, termasuk teori bilangan dan finite field.','2026-10-15 04:41:11','2026-10-15 04:41:11'),(7,'9783038224655','Artificial Intelligence: A Modern Approach','Stuart Russell, Peter Norvig','Pearson',2020,1,3,'Buku acuan kecerdasan buatan: pencarian, constraint satisfaction, logika, dan pembelajaran mesin.','2026-10-15 04:41:11','2026-10-15 04:41:11'),(8,'9796546825566','Laravel: Up & Running','Matt Stauffer','O\'Reilly Media',2019,1,4,'Panduan membangun aplikasi web dengan Laravel: routing, Eloquent, Blade, dan validasi.','2026-10-15 04:41:11','2026-10-15 04:41:12'),(9,'9798239129784','Software Engineering','Ian Sommerville','Pearson',2015,1,0,'Dasar rekayasa perangkat lunak: proses pengembangan, kebutuhan, desain, dan pengujian.','2026-10-15 04:41:11','2026-10-15 04:41:11'),(10,'9797485231227','Database System Concepts','Abraham Silberschatz, Henry F. Korth, S. Sudarshan','McGraw-Hill',2019,2,6,'Konsep basis data relasional, SQL, desain skema, transaksi, dan optimasi kueri.','2026-10-15 04:41:11','2026-10-15 04:41:11'),(11,'9798441986427','Fundamentals of Database Systems','Ramez Elmasri, Shamkant B. Navathe','Pearson',2016,2,5,'Landasan sistem basis data: model ER, normalisasi, SQL, dan arsitektur DBMS.','2026-10-15 04:41:11','2026-10-15 04:41:11'),(12,'9782668991678','Systems Analysis and Design','Kenneth E. Kendall, Julie E. Kendall','Pearson',2019,2,10,'Metode analisis dan perancangan sistem informasi, dari kebutuhan pengguna hingga implementasi.','2026-10-15 04:41:11','2026-10-15 04:41:11'),(13,'9798094673200','Management Information Systems','Kenneth C. Laudon, Jane P. Laudon','Pearson',2020,2,2,'Peran sistem informasi dalam organisasi modern dan pengambilan keputusan bisnis.','2026-10-15 04:41:11','2026-10-15 04:41:11'),(14,'9791403587014','Don\'t Make Me Think, Revisited','Steve Krug','New Riders',2014,2,10,'Prinsip usability dan desain web yang intuitif, dibahas ringkas dan praktis.','2026-10-15 04:41:11','2026-10-15 04:41:11'),(15,'9783864404122','Introduction to Linear Algebra','Gilbert Strang','Wellesley-Cambridge Press',2016,3,11,'Pengantar aljabar linier: vektor, matriks, ruang vektor, eigenvalue, dan aplikasinya.','2026-10-15 04:41:11','2026-10-15 04:41:11'),(16,'9786777278859','Probability & Statistics for Engineers & Scientists','Ronald E. Walpole, Raymond H. Myers, Sharon L. Myers, Keying Ye','Pearson',2012,3,13,'Probabilitas dan statistika untuk mahasiswa teknik dan sains, dengan banyak contoh soal.','2026-10-15 04:41:11','2026-10-15 04:41:11'),(17,'9792799821737','Discrete Mathematics and Its Applications','Kenneth H. Rosen','McGraw-Hill',2018,3,12,'Matematika diskrit: logika, himpunan, graf, kombinatorika, dan teori bilangan.','2026-10-15 04:41:11','2026-10-15 04:41:11'),(18,'9783628707438','A Guide to the Project Management Body of Knowledge (PMBOK Guide)','Project Management Institute','PMI',2021,4,14,'Standar dan panduan manajemen proyek: prinsip, domain kinerja, dan praktik terbaik.','2026-10-15 04:41:11','2026-10-15 04:41:11'),(19,'9781700832023','Principles of Marketing','Philip Kotler, Gary Armstrong','Pearson',2020,4,9,'Dasar-dasar pemasaran: segmentasi, penentuan target, bauran pemasaran, dan perilaku konsumen.','2026-10-15 04:41:11','2026-10-15 04:41:11'),(20,'9797499578318','Pedoman Umum Ejaan Bahasa Indonesia (PUEBI)','Badan Pengembangan dan Pembinaan Bahasa','Kementerian Pendidikan dan Kebudayaan',2016,5,13,'Pedoman penulisan bahasa Indonesia: ejaan, tanda baca, dan penulisan unsur serapan.','2026-10-15 04:41:11','2026-10-15 04:41:11');
 /*!40000 ALTER TABLE `bukus` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -215,7 +215,7 @@ CREATE TABLE `kategoris` (
 
 LOCK TABLES `kategoris` WRITE;
 /*!40000 ALTER TABLE `kategoris` DISABLE KEYS */;
-INSERT INTO `kategoris` VALUES (1,'INF','Informatika & Komputer','2026-10-11 18:45:11','2026-10-11 18:45:11'),(2,'SIS','Sistem Informasi','2026-10-11 18:45:11','2026-10-11 18:45:11'),(3,'MAT','Matematika & Statistika','2026-10-11 18:45:11','2026-10-11 18:45:11'),(4,'MNJ','Manajemen & Bisnis','2026-10-11 18:45:11','2026-10-11 18:45:11'),(5,'UMM','Referensi Umum','2026-10-11 18:45:11','2026-10-11 18:45:11');
+INSERT INTO `kategoris` VALUES (1,'INF','Informatika & Komputer','2026-10-15 04:41:08','2026-10-15 04:41:08'),(2,'SIS','Sistem Informasi','2026-10-15 04:41:08','2026-10-15 04:41:08'),(3,'MAT','Matematika & Statistika','2026-10-15 04:41:08','2026-10-15 04:41:08'),(4,'MNJ','Manajemen & Bisnis','2026-10-15 04:41:08','2026-10-15 04:41:08'),(5,'UMM','Referensi Umum','2026-10-15 04:41:08','2026-10-15 04:41:08');
 /*!40000 ALTER TABLE `kategoris` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -231,7 +231,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -240,7 +240,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'0001_01_01_000000_create_users_table',1),(2,'0001_01_01_000001_create_cache_table',1),(3,'0001_01_01_000002_create_jobs_table',1),(4,'2026_10_08_153804_create_kategoris_table',1),(5,'2026_10_08_153814_create_bukus_table',1);
+INSERT INTO `migrations` VALUES (1,'0001_01_01_000000_create_users_table',1),(2,'0001_01_01_000001_create_cache_table',1),(3,'0001_01_01_000002_create_jobs_table',1),(4,'2026_10_08_153804_create_kategoris_table',1),(5,'2026_10_08_153814_create_bukus_table',1),(6,'2026_10_13_022243_create_peminjamans_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -266,6 +266,43 @@ CREATE TABLE `password_reset_tokens` (
 LOCK TABLES `password_reset_tokens` WRITE;
 /*!40000 ALTER TABLE `password_reset_tokens` DISABLE KEYS */;
 /*!40000 ALTER TABLE `password_reset_tokens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `peminjamans`
+--
+
+DROP TABLE IF EXISTS `peminjamans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `peminjamans` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `kode_pinjam` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `buku_id` bigint unsigned NOT NULL,
+  `nim_peminjam` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama_peminjam` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tanggal_pinjam` date NOT NULL,
+  `tanggal_jatuh_tempo` date NOT NULL,
+  `tanggal_kembali` date DEFAULT NULL,
+  `status` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'dipinjam',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `peminjamans_kode_pinjam_unique` (`kode_pinjam`),
+  KEY `peminjamans_buku_id_foreign` (`buku_id`),
+  KEY `peminjamans_nim_peminjam_buku_id_status_index` (`nim_peminjam`,`buku_id`,`status`),
+  CONSTRAINT `peminjamans_buku_id_foreign` FOREIGN KEY (`buku_id`) REFERENCES `bukus` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `peminjamans`
+--
+
+LOCK TABLES `peminjamans` WRITE;
+/*!40000 ALTER TABLE `peminjamans` DISABLE KEYS */;
+INSERT INTO `peminjamans` VALUES (1,'PJM-SEED-001',2,'12S24001','Dina Sihombing','2026-10-05','2026-10-12',NULL,'dipinjam','2026-10-15 04:41:12','2026-10-15 04:41:12'),(2,'PJM-SEED-002',3,'12S24002','Rizky Manurung','2026-10-13','2026-10-20',NULL,'dipinjam','2026-10-15 04:41:12','2026-10-15 04:41:12'),(3,'PJM-SEED-003',8,'12S24003','Maria Panjaitan','2026-10-03','2026-10-10','2026-10-09','dikembalikan','2026-10-15 04:41:12','2026-10-15 04:41:12'),(4,'PJM-SEED-004',1,'12S24004','Samuel Siregar','2026-09-25','2026-10-02','2026-10-01','dikembalikan','2026-10-15 04:41:12','2026-10-15 04:41:12');
+/*!40000 ALTER TABLE `peminjamans` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -315,7 +352,7 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -324,6 +361,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Pustakawan Del','pustakawan@del.ac.id',NULL,'$2y$12$aDqNum0PsfAT1Ru.I948GeeNmwM00B29l3a8nMbjuyFfzyhZ/281u',NULL,'2026-10-15 04:41:12','2026-10-15 04:41:12');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -336,4 +374,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-12  8:45:45
+-- Dump completed on 2026-10-15 18:41:50
