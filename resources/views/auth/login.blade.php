@@ -27,7 +27,7 @@
                             <input type="checkbox" name="remember" id="remember" class="form-check-input">
                             <label for="remember" class="form-check-label">Ingat saya</label>
                         </div>
-                        <button class="btn btn-del w-100 py-2"><i class="bi bi-box-arrow-in-right me-1"></i>Masuk</button>
+                        <img src="{{ asset('images/logo-del.jpeg') }}" alt="Logo Institut Teknologi Del" class="mb-2" style="height:84px;border-radius:.75rem">
                     </form>
                 </div>
             </div>

@@ -15,8 +15,11 @@ class PeminjamanController extends Controller
 {
     public function index(Request $request)
     {
-        $peminjamans = Peminjaman::with('buku')
-            ->when($request->filled('status'), fn ($q) => $q->where('status', $request->status))
+        // default tampilan: pinjaman aktif; 'semua' berarti tanpa filter status
+        $status = $request->input('status', 'dipinjam');
+
+        $peminjamans = Peminjaman::with('buku.kategori') // eager loading: tidak ada query per baris
+            ->when(in_array($status, ['dipinjam', 'dikembalikan']), fn ($q) => $q->where('status', $status))
             ->when($request->filled('search'), function ($q) use ($request) {
                 $s = $request->search;
                 $q->where(function ($w) use ($s) {
@@ -29,7 +32,27 @@ class PeminjamanController extends Controller
             ->paginate(10)
             ->withQueryString();
 
-        return view('peminjaman.index', compact('peminjamans'));
+        $daftarBuku = Buku::orderBy('judul')->get(['id', 'judul', 'stok']);
+
+        // Ringkasan lewat Fluent Query Builder
+        $ringkas = [
+            'aktif'     => DB::table('peminjamans')->where('status', 'dipinjam')->count(),
+            'terlambat' => DB::table('peminjamans')->where('status', 'dipinjam')
+                                ->where('tanggal_jatuh_tempo', '<', today()->toDateString())->count(),
+            'kembali'   => DB::table('peminjamans')->where('status', 'dikembalikan')->count(),
+        ];
+
+        $driver = DB::connection()->getDriverName();
+
+        return view('peminjaman.index', compact('peminjamans', 'daftarBuku', 'ringkas', 'status', 'driver'));
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate(['buku_id' => 'required|integer|exists:bukus,id']);
+
+        // seluruh logika ACID tetap berada di satu tempat: pinjam()
+        return $this->pinjam($request, (int) $request->input('buku_id'));
     }
 
     public function pinjam(Request $request, int $id)

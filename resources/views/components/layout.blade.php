@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title ?? 'SIPUS-Del' }} — Institut Teknologi Del</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="{{ asset('images/logo-del.jpeg') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
 
         
@@ -225,55 +224,76 @@
         .stat-num { font-size: 1.5rem; font-weight: 700; line-height: 1.1; }
         .stat-label { font-size: .8rem; color: #6b6485; }
 
+        .hero-title { font-family: 'Newsreader', Georgia, serif; letter-spacing: -.01em; }
+        .brand-logo { height: 44px; width: auto; border-radius: .55rem; background: #fff; padding: 2px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+        .brand-title { font-family: 'Newsreader', Georgia, serif; font-size: 1.3rem; color: #fff; }
+        .brand-sub { font-size: .7rem; color: #DDD0FF; letter-spacing: .02em; }
+        .motto {
+            font-family: 'JetBrains Mono', monospace; font-size: .66rem; letter-spacing: .08em; text-transform: uppercase;
+            color: #DDD0FF; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+            border-radius: 2rem; padding: .35rem .8rem;
+        }
+        .mono-mini { font-family: 'JetBrains Mono', monospace; font-size: .64rem; color: #DDD0FF; }
+
         </style>
 </head>
 <body class="{{ ($wide ?? false) ? 'wide' : '' }}">
+    
     <nav class="navbar navbar-expand-lg navbar-dark navbar-del mb-4 sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="{{ route('buku.index') }}">
-                <i class="bi bi-book-half me-2"></i>SIPUS-Del
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="nav">
-                <ul class="navbar-nav ms-auto gap-1 align-items-lg-center">
-    <li class="nav-item">
-        <a class="nav-link {{ request()->routeIs('buku.*') ? 'active' : '' }}" href="{{ route('buku.index') }}">
-            <i class="bi bi-journal-bookmark me-1"></i>Buku
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link {{ request()->routeIs('kategori.*') ? 'active' : '' }}" href="{{ route('kategori.index') }}">
-            <i class="bi bi-tags me-1"></i>Kategori
-        </a>
-    </li>
-    @auth
-        <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('peminjaman.*') ? 'active' : '' }}" href="{{ route('peminjaman.index') }}">
-                <i class="bi bi-arrow-left-right me-1"></i>Peminjaman
-            </a>
-        </li>
-        <li class="nav-item d-flex align-items-center gap-2 ms-lg-2">
-            <span class="small text-white-50 text-nowrap">
-                {{ auth()->user()->name }} · sesi sejak {{ session('login_timestamp') }}
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="{{ route('buku.index') }}">
+            <img src="{{ asset('images/logo-del.jpeg') }}" alt="Logo Institut Teknologi Del" class="brand-logo">
+            <span class="lh-1">
+                <span class="d-block fw-bold brand-title">SIPUS-Del</span>
+                <span class="d-block brand-sub">Perpustakaan Kampus Del</span>
             </span>
-            <form action="{{ route('logout') }}" method="POST" class="m-0">
-                @csrf
-                <button class="btn btn-sm btn-light fw-semibold"><i class="bi bi-box-arrow-right me-1"></i>Logout</button>
-            </form>
-        </li>
-    @else
-        <li class="nav-item ms-lg-2">
-            <a class="btn btn-sm btn-light fw-semibold" href="{{ route('login') }}">
-                <i class="bi bi-person-badge me-1"></i>Login Pustakawan
-            </a>
-        </li>
-    @endauth
-</ul>
-            </div>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-lg-4 me-auto gap-1 align-items-lg-center">
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('buku.*') ? 'active' : '' }}" href="{{ route('buku.index') }}">
+                        <i class="bi bi-journal-bookmark me-1"></i>Katalog Buku
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('kategori.*') ? 'active' : '' }}" href="{{ route('kategori.index') }}">
+                        <i class="bi bi-tags me-1"></i>Kategori
+                    </a>
+                </li>
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('peminjaman.*') ? 'active' : '' }}" href="{{ route('peminjaman.index') }}">
+                            <i class="bi bi-arrow-left-right me-1"></i>Sirkulasi Peminjaman
+                        </a>
+                    </li>
+                @endauth
+            </ul>
+
+            <span class="motto d-none d-xl-inline-block me-3">Martuhan · Marroha · Marbisuk</span>
+
+            @auth
+                <div class="d-flex align-items-center gap-2">
+                    <div class="text-end lh-sm">
+                        <div class="fw-semibold small text-white">{{ auth()->user()->name }}</div>
+                        <div class="mono-mini">{{ auth()->user()->email }}</div>
+                        <div class="mono-mini">sesi sejak {{ session('login_timestamp') }}</div>
+                    </div>
+                    <form action="{{ route('logout') }}" method="POST" class="m-0">
+                        @csrf
+                        <button class="btn btn-sm btn-light fw-semibold" title="Logout"><i class="bi bi-box-arrow-right"></i></button>
+                    </form>
+                </div>
+            @else
+                <a class="btn btn-sm btn-light fw-semibold" href="{{ route('login') }}">
+                    <i class="bi bi-person-badge me-1"></i>Login Pustakawan
+                </a>
+            @endauth
         </div>
-    </nav>
+    </div>
+</nav>
 
     <main class="container">
         @if(session('success'))
@@ -299,9 +319,19 @@
         {{ $slot }}
     </main>
 
-    <footer class="footer-del text-center small pb-4">
-        © {{ date('Y') }} SIPUS-Del · Institut Teknologi Del
-    </footer>
+    <footer class="footer-del small pb-4">
+    <div class="container d-flex flex-wrap justify-content-between gap-3 border-top border-light border-opacity-25 pt-3">
+        <div>
+            <div class="fw-bold brand-title">SIPUS-Del</div>
+            <div>Sistem Informasi Manajemen Perpustakaan · Institut Teknologi Del</div>
+            <div class="mono-mini">Jl. Sisingamangaraja, Sitoluama, Laguboti, Kabupaten Toba, Sumatera Utara 22381</div>
+        </div>
+        <div class="text-md-end">
+            <div class="mono-mini">Martuhan · Marroha · Marbisuk</div>
+            <div>© {{ date('Y') }} Institut Teknologi Del · Tugas Mandiri 12S3101</div>
+        </div>
+    </div>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

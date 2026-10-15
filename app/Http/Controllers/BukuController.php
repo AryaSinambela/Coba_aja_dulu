@@ -42,5 +42,9 @@ class BukuController extends Controller
         ];
 
         return view('buku.index', compact('bukus', 'kategoris', 'stats'));
+    $peminjamans = Peminjaman::with('buku')->latest()->get();
+
+    return view('buku.index', compact('bukus', 'peminjamans'));
+
     }
 }

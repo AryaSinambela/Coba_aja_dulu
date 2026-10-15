@@ -7,6 +7,7 @@ use App\Http\Controllers\PeminjamanController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', fn () => redirect()->route('buku.index'));
+Route::post('peminjaman', [PeminjamanController::class, 'store'])->name('peminjaman.store');
 
 // --- Autentikasi ---
 Route::middleware('guest')->group(function () {
